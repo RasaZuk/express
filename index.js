@@ -95,7 +95,10 @@ app.get('/nuolaidos/*', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
-    return res.send(`Mokosi ${object(students).length} studentai:`);
+
+    const quantity = Object.keys(students).length;
+
+    return res.send(`Mokosi ${quantity} studentai: `);
 });
 
 app.get('*', (req, res) => {
